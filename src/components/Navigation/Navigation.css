@@ -1,0 +1,23 @@
+.Navigation {
+    height: 56px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: whitesmoke;
+    background-color: #1E1E1E;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index: 90;
+}
+.Navigation ul {
+    list-style: none;
+}
+
+.Navigation ul, .Navigation ul li {
+    height: 100%;
+    margin: 0;
+}
