@@ -1,9 +1,10 @@
 import React from 'react';
+import classes from './Job.css'
 
-const job = () => {
+const job = (props) => {
     return (
-        <div>
-            A Job
+        <div className={classes.Job}>
+            <a href={props.link}>{props.title}</a>
         </div>
     );
 };
