@@ -16,7 +16,7 @@ class App extends Component {
         (async () => {
 
             let feed = await new Parser().parseURL('https://stackoverflow.com/jobs/feed?l=Norway&u=Km&d=20');
-            //console.log(feed);
+            console.log(feed.items);
 
             this.setState({
                 jobsData: feed.items
