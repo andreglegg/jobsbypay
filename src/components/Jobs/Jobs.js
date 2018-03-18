@@ -1,6 +1,5 @@
 import React from 'react';
 
-import Aux from '../../hoc/Aux'
 import Job from './Job/Job'
 import classes from './Jobs.css'
 
