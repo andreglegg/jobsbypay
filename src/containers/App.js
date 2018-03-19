@@ -3,7 +3,8 @@ import React, {Component} from 'react';
 import Aux from '../hoc/Aux'
 import Layout from '../components/Layout/Layout'
 import Jobs from '../components/Jobs/Jobs'
-import Parser from 'rss-parser'
+//import Parser from 'rss-parser'
+import Feed from 'rss-to-json'
 
 class App extends Component {
     state = {
@@ -12,7 +13,13 @@ class App extends Component {
 
     componentDidMount() {
 
-        (async () => {
+        Feed.load('https://stackoverflow.com/jobs/feed?l=Norway&u=Km&d=20&s=1&c=USD', (err, rss) => {
+            console.log(rss.items);
+            this.setState({
+                jobsData: rss.items
+            });
+        });
+        /*(async () => {
 
             const rss = await new Parser();
             rss.parseURL('https://stackoverflow.com/jobs/feed?l=Norway&u=Km&d=20')
@@ -25,7 +32,7 @@ class App extends Component {
                     console.log(error)
             })
 
-        })();
+        })();*/
     }
 
     render() {

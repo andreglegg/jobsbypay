@@ -6,7 +6,7 @@ const intro = () => {
     return (
         <div className={classes.Intro}>
         <p>
-            Developer Jobs in Norway
+            Developer job listings with open salaries in Norway.
         </p>
         </div>
     );
