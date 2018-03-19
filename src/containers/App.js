@@ -1,49 +1,32 @@
 import React, {Component} from 'react';
 
+import {
+    Route,
+    HashRouter
+} from "react-router-dom";
+import classes from './App.css'
 import Aux from '../hoc/Aux'
-import Layout from '../components/Layout/Layout'
-import Jobs from '../components/Jobs/Jobs'
-//import Parser from 'rss-parser'
-import Feed from 'rss-to-json'
+import Navigation from "../components/Navigation/Navigation";
+import Home from "../components/Home"
+import About from "../components/About"
+import Footer from "../components/Footer/Footer";
 
-const URL = 'https://stackoverflow.com/jobs/feed?l=Norway&u=Km&d=20&s=1&c=USD&sort=p';
 
 class App extends Component {
-    state = {
-        jobsData : {},
-    };
-
-    componentDidMount() {
-
-        Feed.load(URL, (err, rss) => {
-            console.log(rss.items);
-            this.setState({
-                jobsData: rss.items
-            });
-        });
-        /*(async () => {
-
-            const rss = await new Parser();
-            rss.parseURL('https://stackoverflow.com/jobs/feed?l=Norway&u=Km&d=20')
-                .then(feed => {
-                    console.log(feed.items);
-                    this.setState({
-                        jobsData: feed.items
-                    });
-                }).catch(error => {
-                    console.log(error)
-            })
-
-        })();*/
-    }
 
     render() {
         return (
-            <Aux>
-                <Layout>
-                    <Jobs jobsData={this.state.jobsData} />
-                </Layout>
-            </Aux>
+            <HashRouter>
+                <Aux>
+                    <Navigation/>
+                    <div className={classes.Content}>
+                        <Route exact path="/" component={Home}/>
+                        <Route path="/about" component={About}/>
+                        {/*<Route path='*' exact component={notFound} />*/}
+                    </div>
+                    <Footer/>
+                </Aux>
+            </HashRouter>
         );
     }
 }

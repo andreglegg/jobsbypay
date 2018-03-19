@@ -15,11 +15,11 @@
 }
 
 .Icon {
-    display: flex;
-    flex-direction: column;
-    min-height: 100%;
     padding: 10px;
-    justify-content: center;
+}
+
+.Icon img {
+    width: 64px;
 }
 
 .Title {

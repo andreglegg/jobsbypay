@@ -7,7 +7,7 @@ const job = (props) => {
     return (
         <div className={classes.Job}>
             <div className={classes.Icon}>
-                <a href={props.link}><img src={LOGO} width="64" alt="logo"/></a>
+                <a href={props.link}><img src={LOGO} alt="logo"/></a>
             </div>
             <div className={classes.Title}>
                 <a href={props.link}>{props.title}</a>
