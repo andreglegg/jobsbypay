@@ -6,9 +6,7 @@ import classes from './Jobs.css'
 const timeSince = (date) => {
 
     let seconds = Math.floor((new Date() - date) / 1000);
-
     let interval = Math.floor(seconds / 31536000);
-
     if (interval > 1) {
         return interval + " years";
     }
@@ -32,23 +30,27 @@ const timeSince = (date) => {
 };
 
 const jobs = (props) => {
-    const JobList = Object.keys(props.jobsData) //.slice(0, 10)
+    let obj = [...props.jobsData];
+    obj.sort((a, b) => {
+        return a.created < b.created;
+    });
+    const JobList = Object.keys(obj) //.slice(0, 10)
         .map((key, index) => {
-            const item = props.jobsData[index];
+            const item = obj[index];
             //console.log(item);
-            const date = timeSince(new Date(item.created));
+            const formatedDate = timeSince(new Date(item.created));
             return (<Job
                 key={index}
                 title={item.title}
                 link={item.link}
-                pubDate={date + " ago"}
+                pubDate={formatedDate + " ago"}
             />);
         });
 
     //console.log(myItem);
     return (
         <div className={classes.Jobs}>
-            { JobList }
+            {JobList}
         </div>
     );
 };
