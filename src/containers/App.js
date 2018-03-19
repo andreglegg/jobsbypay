@@ -6,6 +6,8 @@ import Jobs from '../components/Jobs/Jobs'
 //import Parser from 'rss-parser'
 import Feed from 'rss-to-json'
 
+const URL = 'https://stackoverflow.com/jobs/feed?l=Norway&u=Km&d=20&s=1&c=USD&sort=p';
+
 class App extends Component {
     state = {
         jobsData : {},
@@ -13,7 +15,7 @@ class App extends Component {
 
     componentDidMount() {
 
-        Feed.load('https://stackoverflow.com/jobs/feed?l=Norway&u=Km&d=20&s=1&c=USD', (err, rss) => {
+        Feed.load(URL, (err, rss) => {
             console.log(rss.items);
             this.setState({
                 jobsData: rss.items
