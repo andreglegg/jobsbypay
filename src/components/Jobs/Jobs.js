@@ -38,12 +38,15 @@ const jobs = (props) => {
         .map((key, index) => {
             const item = obj[index];
             //console.log(item);
-            const formatedDate = timeSince(new Date(item.created));
+            //const formatedDate = timeSince(new Date(item.created));
             return (<Job
                 key={index}
                 title={item.title}
                 link={item.link}
-                pubDate={formatedDate + " ago"}
+                date={item.date}
+                companyName={item.companyName}
+                location={item.location}
+                salary={item.salary}
             />);
         });
 

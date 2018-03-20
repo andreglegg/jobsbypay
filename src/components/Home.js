@@ -13,13 +13,24 @@ class Home extends Component {
     };
 
     componentDidMount() {
-
-        Feed.load(URL, (err, rss) => {
+        return fetch('http://localhost:8081/output.json')
+            .then((response) => response.json())
+            .then((responseJson) => {
+                console.log(responseJson.jobs);
+                this.setState({
+                    jobsData: responseJson.jobs
+                });
+                //return responseJson;
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+        /*Feed.load(URL, (err, rss) => {
             console.log(rss.items);
             this.setState({
                 jobsData: rss.items
             });
-        });
+        });*/
         /*(async () => {
 
             const rss = await new Parser();

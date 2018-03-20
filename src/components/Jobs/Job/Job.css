@@ -22,10 +22,25 @@
     width: 64px;
 }
 
-.Title {
-    padding: 0 10px;
+.Salary {
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: center;
+    color: green;
 }
 
+.Title {
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+    flex: 1;
+    justify-content: space-between;
+}
+
+.Title a {
+    padding: 10px 0;
+}
 .MeteData {
     font-size: 1rem;
     color: darkgrey;

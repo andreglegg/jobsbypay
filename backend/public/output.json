@@ -1,0 +1,60 @@
+{
+  "jobs": [
+    {
+      "title": "Junior JavaScript Software Engineer",
+      "date": "2d ago",
+      "link": "/jobs/155056/junior-javascript-software-engineer-genus?a=Q03TYxLOONq&so=i&pg=1&offset=-1&total=7&l=Norway&u=Km&d=20&s=1&c=USD",
+      "companyName": "Genus",
+      "location": "Lysaker,Norway",
+      "salary": "€50k-85k"
+    },
+    {
+      "title": "Did you know Vipps is more than peer to peer payment? #Backend #Java # Golang",
+      "date": "3d ago",
+      "link": "/jobs/171122/did-you-know-vipps-is-more-than-peer-to-peer-first-engineers?a=Vo7mkIylsLS&so=i&pg=1&offset=0&total=7&l=Norway&u=Km&d=20&s=1&c=USD",
+      "companyName": "FirstEngineers",
+      "location": "Oslo,Norway",
+      "salary": "$55k-85k"
+    },
+    {
+      "title": "C++ Video Streaming",
+      "date": "1w ago",
+      "link": "/jobs/159585/c-plus-plus-video-streaming-appear-tv?a=Rwel4YlJdRe&so=i&pg=1&offset=1&total=7&l=Norway&u=Km&d=20&s=1&c=USD",
+      "companyName": "AppearTV",
+      "location": "Oslo,Norway",
+      "salary": "€45k-75k"
+    },
+    {
+      "title": "Java and Video Compression",
+      "date": "2w ago",
+      "link": "/jobs/161852/java-and-video-compression-appear-tv?a=ShmRrIDXaTK&so=i&pg=1&offset=2&total=7&l=Norway&u=Km&d=20&s=1&c=USD",
+      "companyName": "AppearTV",
+      "location": "Oslo,Norway",
+      "salary": "€45k-70k"
+    },
+    {
+      "title": "Senior Angular & .Net Developer",
+      "date": "yesterday",
+      "link": "/jobs/168460/senior-angular-net-developer-deltager-with-spoortz?a=UuLCtFDv5yo&so=i&pg=1&offset=3&total=7&l=Norway&u=Km&d=20&s=1&c=USD",
+      "companyName": "DeltagerwithSpoortz",
+      "location": "Oslo,Norway",
+      "salary": "$70k-80k"
+    },
+    {
+      "title": "C++ Developer Disrupting TV",
+      "date": "2w ago",
+      "link": "/jobs/159468/c-plus-plus-developer-disrupting-tv-appear-tv?a=RtNvwzn0fG8&so=i&pg=1&offset=4&total=7&l=Norway&u=Km&d=20&s=1&c=USD",
+      "companyName": "AppearTV",
+      "location": "Oslo,Norway",
+      "salary": "€45k-70k"
+    },
+    {
+      "title": "Hei utvikler! Er du lei av møter?",
+      "date": "3w ago",
+      "link": "/jobs/152806/hei-utvikler-er-du-lei-av-m%C3%B8ter-fiken-as?a=Pfh8ohjh7yw&so=i&pg=1&offset=6&total=7&l=Norway&u=Km&d=20&s=1&c=USD",
+      "companyName": "FikenAS",
+      "location": "Oslo,Norway",
+      "salary": "kr600k-800k"
+    }
+  ]
+}
