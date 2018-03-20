@@ -2,10 +2,9 @@ import React, {Component} from 'react';
 
 import Aux from '../hoc/Aux'
 import Intro from './Intro/Intro'
-import Jobs from "./Jobs/Jobs";
-import Feed from "rss-to-json";
+import Jobs from './Jobs/Jobs'
 
-const URL = 'https://stackoverflow.com/jobs/feed?l=Norway&u=Km&d=20&s=1&c=USD&sort=p';
+//const URL = 'https://stackoverflow.com/jobs/feed?l=Norway&u=Km&d=20&s=1&c=USD&sort=p';
 
 class Home extends Component {
     state = {
@@ -13,7 +12,7 @@ class Home extends Component {
     };
 
     componentDidMount() {
-        return fetch('http://localhost:8081/output.json')
+        return fetch('https://job-scraper.fr.openode.io/output.json')
             .then((response) => response.json())
             .then((responseJson) => {
                 console.log(responseJson.jobs);

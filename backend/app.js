@@ -3,13 +3,33 @@ var fs = require('fs');
 var request = require('request');
 var cheerio = require('cheerio');
 var cors = require('cors');
+var schedule = require('node-schedule');
+var axios = require('axios');
+var http = require('http'); // 3. HTTP server
+var https = require('https');
+var privateKey = fs.readFileSync('./certs/private.key', 'utf8');
+var certificate = fs.readFileSync('./certs/certificate.crt', 'utf8');
+
+var credentials = {key: privateKey, cert: certificate};
+
 var app = express();
 
 app.use(cors(), express.static('public'));
 
+/**
+ * Get port from environment and store in Express.
+ */
+var port = '80'; // 2. Using process.env.PORT
+app.set('port', port);
+
+/**
+ * Create HTTP server.
+ */
+var server = http.createServer(app);
+
 app.get('/scrape', function (req, res) {
 
-    var url = 'https://stackoverflow.com/jobs?sort=i&l=Norway&d=20&u=Km&s=1&c=USD';
+    var url = 'https://stackoverflow.com/jobs?l=Norway&d=20&u=Km&s=1&c=USD&sort=p';
 
     request(url, function (error, response, html) {
         if (!error) {
@@ -78,6 +98,24 @@ app.get('/scrape', function (req, res) {
 
 });
 
-app.listen('8081');
-console.log('Magic happens on port 8081');
+var j = schedule.scheduleJob('30 * * * *', function () {
+
+    console.log('The answer to life, the universe, and everything!');
+    axios.get('http://localhost:80/scrape')
+        .then(response => {
+            console.log(response.data.url);
+            console.log(response.data.explanation);
+        })
+        .catch(error => {
+            console.log(error);
+        });
+});
+
+var httpServer = http.createServer(app);
+var httpsServer = https.createServer(credentials, app);
+
+httpServer.listen(80);
+httpsServer.listen(443);
+//app.listen(port);
+console.log('Magic happens on port ' + port);
 exports = module.exports = app;

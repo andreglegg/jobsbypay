@@ -2,11 +2,14 @@
   "name": "node-web-scrape",
   "version": "0.0.1",
   "description": "Scrape le web.",
-  "main": "server.js",
+  "main": "app.js",
   "author": "Scotch",
   "dependencies": {
+    "axios": "^0.18.0",
+    "cheerio": "latest",
+    "cors": "^2.8.4",
     "express": "latest",
-    "request": "latest",
-    "cheerio": "latest"
+    "node-schedule": "^1.3.0",
+    "request": "latest"
   }
 }

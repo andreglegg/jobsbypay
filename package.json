@@ -52,7 +52,7 @@
     "test": "node scripts/test.js --env=jsdom",
     "deploy": "npm run build&&gh-pages -d build"
   },
-  "proxy": "http://localhost:8081",
+  "proxy": "https://job-scraper.fr.openode.io/",
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,mjs}"
