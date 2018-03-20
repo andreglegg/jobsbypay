@@ -2,9 +2,10 @@ var express = require('express');
 var fs = require('fs');
 var request = require('request');
 var cheerio = require('cheerio');
+var cors = require('cors');
 var app = express();
 
-app.use(express.static('public'))
+app.use(cors(), express.static('public'));
 
 app.get('/scrape', function (req, res) {
 
@@ -46,9 +47,9 @@ app.get('/scrape', function (req, res) {
                 if (salary == "") {
                     return
                 }
-                console.log(i + "----" + title)
+                console.log(i + "----" + title);
 
-                var tempObj = {}
+                var tempObj = {};
                 tempObj.title = title;
                 tempObj.date = date;
                 tempObj.link = link;
@@ -67,7 +68,7 @@ app.get('/scrape', function (req, res) {
 
             console.log('File successfully written! - Check your project directory for the output.json file');
 
-        })
+        });
 
         // Finally, we'll just send out a message to the browser reminding you that this app does not have a UI.
         res.send('Check console!')
@@ -75,8 +76,8 @@ app.get('/scrape', function (req, res) {
     });
 
 
-})
+});
 
-app.listen('8081')
+app.listen('8081');
 console.log('Magic happens on port 8081');
 exports = module.exports = app;
