@@ -61,14 +61,13 @@ app.get('/scrape', function (req, res) {
                 // format salary
                 salary = data.children().filter(".-perks").find('.-salary').text(); //data.children().last().prev().children().text();
                 salary = salary.replace(/\s/g, '');
-                salary = salary.replace("Equity", "");
-                salary = salary.replace("|", "");
+                salary = salary.replace("|", " | ");
 
-                if (salary == "") {
+                if (salary == "" || salary == "Equity") {
                     return
                 }
                 console.log(i + "----" + title);
-
+                res.send(i + "----" + title);
                 var tempObj = {};
                 tempObj.title = title;
                 tempObj.date = date;
@@ -98,7 +97,7 @@ app.get('/scrape', function (req, res) {
 
 });
 
-var j = schedule.scheduleJob('30 * * * *', function () {
+var j = schedule.scheduleJob('30 11 * * *', function () {
 
     console.log('The answer to life, the universe, and everything!');
     axios.get('http://localhost:80/scrape')
@@ -114,8 +113,9 @@ var j = schedule.scheduleJob('30 * * * *', function () {
 var httpServer = http.createServer(app);
 var httpsServer = https.createServer(credentials, app);
 
-httpServer.listen(80);
-httpsServer.listen(443);
+
+httpServer.listen(80); // change port to 8081 for localhost
+httpsServer.listen(443); // comment this line for localhost
 //app.listen(port);
 console.log('Magic happens on port ' + port);
 exports = module.exports = app;
