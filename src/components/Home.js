@@ -3,12 +3,13 @@ import React, {Component} from 'react';
 import Aux from '../hoc/Aux'
 import Intro from './Intro/Intro'
 import Jobs from './Jobs/Jobs'
+import JobsLoading from './Jobs/Job/JobLoading'
 
 //const URL = 'https://stackoverflow.com/jobs/feed?l=Norway&u=Km&d=20&s=1&c=USD&sort=p';
 
 class Home extends Component {
     state = {
-        jobsData: {},
+        jobsData: null,
     };
 
     componentDidMount() {
@@ -47,10 +48,18 @@ class Home extends Component {
     }
 
     render() {
+        let data = this.state.jobsData;
+        console.log(data);
+        if (!data) {
+            data = <JobsLoading/>;
+        } else {
+            data = <Jobs jobsData={data}/>;
+        }
+
         return (
             <Aux>
                 <Intro/>
-                <Jobs jobsData={this.state.jobsData}/>
+                {data}
             </Aux>
         );
     }

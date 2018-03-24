@@ -1,0 +1,46 @@
+.Container {
+    margin-top: 40px;
+}
+
+.Job {
+    display: flex;
+    border-bottom: 15px solid white;
+    -webkit-box-shadow: 0px 1px 0px 0px rgba(237, 237, 237, 1);
+    -moz-box-shadow: 0px 1px 0px 0px rgba(237, 237, 237, 1);
+    box-shadow: 0px 1px 0px 0px rgba(237, 237, 237, 1);
+    justify-content: space-between;
+    opacity: 0.5;
+    margin-bottom: 20px;
+}
+
+.Icon {
+    min-width: 90px;
+    border-right: 10px solid white;
+}
+
+.Salary {
+    min-width: 100px;
+    border-left: 10px solid white;
+}
+
+@keyframes placeHolderShimmer {
+    0% {
+        background-position: -800px 0
+    }
+    100% {
+        background-position: 800px 0
+    }
+}
+
+.Job {
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderShimmer;
+    animation-timing-function: linear;
+    background: #f6f7f8;
+    background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+    background-size: 800px 104px;
+    height: 96px;
+    position: relative;
+}
