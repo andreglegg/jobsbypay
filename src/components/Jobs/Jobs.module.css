@@ -1,0 +1,14 @@
+.jobs {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.emptyState {
+  padding: 32px;
+  text-align: center;
+  background-color: #ffffff;
+  border: 1px dashed #cccccc;
+  border-radius: 8px;
+  color: #555555;
+}

@@ -1,0 +1,67 @@
+.job {
+  display: grid;
+  grid-template-columns: 64px 1fr auto;
+  gap: 16px;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 16px 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.icon img {
+  width: 48px;
+  height: 48px;
+}
+
+.title a {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1e1e1e;
+  text-decoration: none;
+}
+
+.title a:hover,
+.title a:focus {
+  text-decoration: underline;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 8px 0 0;
+  color: #555555;
+  font-size: 0.9rem;
+}
+
+.meta div {
+  display: flex;
+  gap: 6px;
+}
+
+.meta dt {
+  font-weight: 600;
+}
+
+.meta dd {
+  margin: 0;
+}
+
+.salary {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1f7a8c;
+}
+
+@media (max-width: 600px) {
+  .job {
+    grid-template-columns: 48px 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .salary {
+    grid-column: span 2;
+    justify-self: flex-start;
+  }
+}

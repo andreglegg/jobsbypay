@@ -1,0 +1,12 @@
+.intro {
+  font-size: 1.1rem;
+  text-align: center;
+  margin: 24px auto 32px;
+  color: #1e1e1e;
+}
+
+.notice {
+  margin-top: 12px;
+  font-size: 0.95rem;
+  color: #5a5a5a;
+}
